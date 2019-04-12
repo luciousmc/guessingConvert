@@ -1,6 +1,7 @@
 
+
 class RandomGenerator{
-	constructor(min, max){
+	constructor(min, max){ 
 		this.min = min;
 		this.max = max;
 		//takes in the minimum and maximum values
@@ -18,7 +19,6 @@ class RandomGenerator{
 		//make a random value between the minimum and maximum values
 		//and store the number into the storage from the constructor
 		this.randomNum = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-		return this.randomNum;
 	}
 	getRange(){
 		//return an object with min and max, min being the minimum value for the generator, max being the maximum value

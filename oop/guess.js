@@ -2,13 +2,18 @@ class GuessGame{
     constructor(){
         this.secretNumber = null;
         this.handleGuess = this.handleGuess.bind(this);
+        this.randomize = new RandomGenerator();
     }
     guess_start(){
         this.secretNumber = this.pickRandomNumber(1,10);
         this.attachHandlers();
     }
     pickRandomNumber(min, max){
-        return Math.floor(Math.random() * (max-min)) + min;
+
+       this.randomize.generate();
+       var number = this.randomize.getNum();
+
+       return number;
     }
     attachHandlers(){
         $('#submitGuess').click( this.handleGuess );
